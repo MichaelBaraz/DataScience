@@ -21,7 +21,6 @@ rankhospital <- function(state, outcome, num = "best") {
     ## now filter based on specified state 
     df <- filterByState(df, state)
     
-    
     ##check rank vs quantity
     ##will return subset of original data.
 
@@ -55,3 +54,11 @@ rankhospital <- function(state, outcome, num = "best") {
     }
     
 }
+
+## Tests and expected results:
+# rankhospital("TX", "heart failure", 4)
+## [1] "DETAR HOSPITAL NAVARRO"
+# rankhospital("MD", "heart attack", "worst")
+## [1] "HARFORD MEMORIAL HOSPITAL"
+# rankhospital("MN", "heart attack", 5000)
+## [1] NA
