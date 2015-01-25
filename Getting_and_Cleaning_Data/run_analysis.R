@@ -22,15 +22,15 @@
 #  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 # 
 # Implementation (per documentation in codebook.md):
-# Step 1 - Read and combine subjects data ("train/subject_train.txt"; "test/subject_test.txt").
-# Step 2 - Read and combine actvity data ("train/y_train.txt"; "test/y_test.txt") and combined rows decode by activity labels ("activity_labels.txt").
+# Step 1 - Read and combine subject data ("train/subject_train.txt"; "test/subject_test.txt").
+# Step 2 - Read and combine activity data train and test data and combine rows, decode by activity labels
 # Step 3 - Read and combine features data ("test/X_test.txt"; "train/X_train.txt") and set column names for subjects ("features.txt").
 # Step 4 - Combine the datasets.
 # Step 5 - Extract from dataset only the measured columns, e.g. "-mean()" and "-std()".
 # Step 6 - Compute the means and group by activity and subject.
 # Step 7 - Writing the result to semicolon (";") separated flat (text) file.
 
-# Step 1 - Read and combine test and train subjects data
+# Step 1 - Read and combine test and train subject data
 subject_train <- read.table("train/subject_train.txt")
 subject_test <- read.table("test/subject_test.txt")
 # Merge datasets
@@ -39,7 +39,7 @@ subject <- rbind(subject_train, subject_test)
 colnames(subject) <- "subject"
 
 
-# Step 2 - Read and combine train and test data and combined rows decode by activity labels
+# Step 2 - Read and combine activity data train and test data and combine rows, decode by activity labels
 # read activity data
 y_train <- read.table("train/y_train.txt")
 y_test <- read.table("test/y_test.txt")
@@ -51,7 +51,7 @@ activity_labels <- read.table("activity_labels.txt")
 activity <- merge(y, activity_labels, by=1)[,2]
 
 
-# Step 3 - Read and combine features data and set column names.
+# Step 3 - Read and combine features data ("test/X_test.txt"; "train/X_train.txt") and set column names for subjects ("features.txt").
 # Read in and train features data
 X_test <- read.table("test/X_test.txt")
 X_train <- read.table("train/X_train.txt")
