@@ -2,10 +2,6 @@
 # Author:         Michael Baraz
 # Purpose:        Load dataset into R workspace
 
-# Program name:   load_power_data.R
-# Author:         Michael Baraz
-# Purpose:        Load dataset into R workspace
-
 #Set the date/time format
 #date_time <- function(date, time) {
 #  return (strptime(paste(date, time), "%d/%m/%Y %H:%M:%S"))
