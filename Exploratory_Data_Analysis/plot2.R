@@ -3,11 +3,6 @@
 # Purpose:        Create time series plot per assignment
 
 
-# Program name:   plot2.R
-# Author:         Michael Baraz
-# Purpose:        Create time series plot per assignment
-
-
 #Read file into a dataframe and set date and time columns
 power <- read.table("household_power_consumption.txt",
                    header=TRUE,
