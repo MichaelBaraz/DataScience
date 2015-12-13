@@ -20,7 +20,7 @@ power <- subset(power, Date %in% dates)
   
 
 #create PNG file
-png("plot1.png", height=450, width=450)
+png("plot1.png", height=480, width=480)
 
 #plot the histogram graph
 hist(power$Global_active_power,
